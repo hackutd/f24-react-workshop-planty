@@ -1,4 +1,5 @@
 import React from "react";
+import Popup from "./Popup.jsx";    
 
 function Menu() {
   return (
@@ -7,6 +8,7 @@ function Menu() {
       <NumberDisplay name="water" value="25" />
       <MenuButton purchase="buy 10 water" cost="10" />
       <MenuButton purchase="new plant" cost="5" />
+      <Popup isOpen={true}></Popup>
     </div>
   );
 }
