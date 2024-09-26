@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "./Popup.jsx";    
+import Popup from "./Popup.jsx";
 
 function Menu() {
   return (
@@ -13,26 +13,24 @@ function Menu() {
   );
 }
 
-function NumberDisplay(props) {
+function NumberDisplay({ name, value }) {
   return (
-    <div className="flex flex-wrap gap-8 justify-center font-balsamiq">
-      <div className="flex flex-row justify-evenly items-center bg-backgroundDark text-primary rounded-xl border-backgroundDark border-2">
-        <h1 className="px-2 flex text-xl font-bold justify-center bg-backgroundDark translate-x-2">
-          {props.name}
-        </h1>
-        <div className="w-24 h-full bg-background rounded-xl flex justify-center">
-          <h1 className="font-bold text-xl text-text">{props.value}</h1>
-        </div>
+    <div className="w-44 flex flex-row justify-evenly items-center bg-backgroundDark border-backgroundDark border-[3px] rounded-xl font-bold text-xl font-balsamiq">
+      <h1 className="px-2 basis-5/12 text-primary text-center bg-backgroundDark">
+        {name}
+      </h1>
+      <div className="h-full grow flex justify-center bg-background rounded-r-xl">
+        <h1 className="text-text">{value}</h1>
       </div>
     </div>
   );
 }
 
-function MenuButton(props) {
+function MenuButton({ purchase, cost }) {
   return (
-    <div className="px-4 font-balsamiq bg-backgroundDark text-primary rounded-xl border-backgroundDark border-2 hover:bg-backgroundDarker hover:border-backgroundDarker transition duration-150">
-      <button className="w-full flex text-xl font-bold justify-center">
-        {props.purchase} ({props.cost}g)
+    <div className="px-4 rounded-xl bg-backgroundDark transition hover:bg-backgroundDarker flex items-center">
+      <button className="text-xl text-primary font-bold font-balsamiq">
+        {purchase} ({cost}g)
       </button>
     </div>
   );
