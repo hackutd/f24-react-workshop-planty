@@ -34,7 +34,7 @@ function Valuedisplay() {
                 <button className='w-full flex text-xl font-bold justify-center'>buy 10 water (10g)</button>
             </div>
             <div className='px-4 bg-backgroundDark flex flex-row items-center justify-center text-primary rounded-xl border-backgroundDark border-2 hover:bg-backgroundDarker hover:border-backgroundDarker transition duration-150'>
-                <button onClick={togglePopup} className='flex text-xl font-bold justify-center'>newplant(5g)</button>
+                <button onClick={togglePopup} className='flex text-xl font-bold justify-center'>new plant(5g)</button>
             </div>
         </div>
     </div>

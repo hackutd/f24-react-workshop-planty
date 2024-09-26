@@ -2,7 +2,7 @@ import React from 'react';
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 
-function Popup({ isOpen, togglePopup, children }) {
+function Popup({ isOpen, togglePopup}) {
     if (!isOpen) return null;
 
     return (
@@ -21,7 +21,6 @@ function Popup({ isOpen, togglePopup, children }) {
                 </div>
                 <button onClick={togglePopup} className='bg-backgroundDark text-primary mt-6 h-8 w-28 font-bold text-lg font-balsamiq rounded-lg'>plant!</button>
             </div>
-            {children}
         </div>
     );
 }
