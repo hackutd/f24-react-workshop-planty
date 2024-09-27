@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card() {
+function Card({ name, picture, price, growth, maxGrowth }) {
   return (
     <div className="w-[24rem] mt-6 mx-2 p-2 bg-backgroundDark rounded-xl font-balsamiq flex justify-center gap-2">
       {/* Picture and Water/Button */}
@@ -8,7 +8,7 @@ function Card() {
         <div className="w-16 h-16 mx-auto">
           <img
             className="w-full h-full flex rounded-full object-cover "
-            src="https://www.calyxflowers.com/uploads/tulipacf.jpg"
+            src={picture}
             alt="flower"
           />
         </div>
@@ -19,13 +19,16 @@ function Card() {
 
       {/* Name and Sellprice */}
       <div className="mt-1 flex flex-col grow">
-        <h1 className="text-3xl text-text font-bold">Plant Name</h1>
+        <h1 className="text-3xl text-text font-bold">{name}</h1>
         <h1 className="mb-2 mt-[-0.25rem] text-textLight">
           sell price:
-          <span className="ml-1 text-primary text-lg font-bold">15g</span>
+          <span className="ml-1 text-primary text-lg font-bold">{price}g</span>
         </h1>
         <h1 className="text-text text-5xl font-bold self-center">
-          3<span className="ml-1 text-textLight text-lg">/6 growth</span>
+          {growth}
+          <span className="ml-1 text-textLight text-lg">
+            /{maxGrowth} growth
+          </span>
         </h1>
       </div>
     </div>
