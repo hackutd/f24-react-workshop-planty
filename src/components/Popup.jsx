@@ -16,16 +16,17 @@ function Popup({ isPopupOpen, closePopup, handleFormSubmit }) {
     else setPictureIndex(pictureIndex + 1);
   };
 
+  // Create new plant button
   const handleSubmit = () => {
-    const randomPrice = randomInt(10, 20); // Random price between 10 and 20
-    const randomGrowth = randomInt(3, 10); // Random max growth between 3 and 10
+    const randomPrice = randomInt(10, 25); // Random price between 10 and 25
+    const randomGrowth = randomInt(5, 15); // Random max growth between 5 and 15
 
     // Callback function call
     handleFormSubmit({
       name,
       price: randomPrice,
       picture: pictureIndex,
-      growth: 1,
+      growth: 0,
       maxGrowth: randomGrowth,
     });
 

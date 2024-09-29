@@ -9,24 +9,24 @@
   "initialFlowers": [
     {
       "name": "Eugene",
-      "price": 12,
+      "price": 10,
       "picture": 0,
-      "growth": 1,
+      "growth": 0,
       "maxGrowth": 6
     },
     {
       "name": "Eugene's son",
-      "price": 12,
+      "price": 16,
       "picture": 2,
-      "growth": 1,
-      "maxGrowth": 6
+      "growth": 0,
+      "maxGrowth": 9
     },
     {
       "name": "Eugene's brother",
-      "price": 12,
+      "price": 20,
       "picture": 3,
-      "growth": 1,
-      "maxGrowth": 6
+      "growth": 0,
+      "maxGrowth": 12
     }
   ]
 }

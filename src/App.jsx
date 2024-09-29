@@ -6,8 +6,8 @@ import Popup from "./components/Popup.jsx";
 import data from "./data.json";
 
 function App() {
-  const [gold, setGold] = useState(25);
-  const [water, setWater] = useState(15);
+  const [gold, setGold] = useState(10);
+  const [water, setWater] = useState(10);
   const [flowers, setFlowers] = useState(data.initialFlowers);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
