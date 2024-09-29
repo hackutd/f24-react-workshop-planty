@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ name, picture, price, growth, maxGrowth }) {
+function Card({ name, picture, price, growth, maxGrowth, onClick }) {
   return (
     <div className="w-[24rem] mt-6 mx-2 p-2 bg-backgroundDark rounded-xl font-balsamiq flex justify-center gap-2">
       {/* Picture and Water/Button */}
@@ -12,7 +12,10 @@ function Card({ name, picture, price, growth, maxGrowth }) {
             alt="flower"
           />
         </div>
-        <button className="w-20 mt-2 rounded-md bg-backgroundDarker text-primary font-bold text-lg transition hover:text-text">
+        <button
+          onClick={onClick}
+          className="w-20 mt-2 rounded-md bg-backgroundDarker text-primary font-bold text-lg transition hover:text-text"
+        >
           water
         </button>
       </div>

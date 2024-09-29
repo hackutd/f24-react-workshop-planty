@@ -1,78 +1,13 @@
-import React, { useState } from "react";
-import Popup from "./Popup.jsx";
-import Card from "./Card.jsx";
-import pictures from "../data/pictures.js"; // Import the pictures module
+import React from "react";
 
-function Menu() {
-  const initialFlowers = [
-    {
-      name: "Eugene",
-      price: 12,
-      picture: "one",
-      growth: 1,
-      maxGrowth: 6,
-    },
-    {
-      name: "Eugene's son",
-      price: 12,
-      picture: "three",
-      growth: 1,
-      maxGrowth: 6,
-    },
-    {
-      name: "Eugene's brother",
-      price: 12,
-      picture: "four",
-      growth: 1,
-      maxGrowth: 6,
-    },
-  ];
-
-  const [gold, setGold] = useState(25);
-  const [water, setWater] = useState(15);
-  const [flowers, setFlowers] = useState(initialFlowers);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [newPlantData, setNewPlantData] = useState({
-    name: "",
-    price: 0,
-    picture: "",
-    growth: 1,
-    maxGrowth: 6,
-  });
-
-  const buyWater = () => {
-    if (gold >= 10) {
-      setGold(gold - 10);
-      setWater(water + 10);
-    }
-  };
-
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setNewPlantData({ ...newPlantData, [name]: value });
-  };
-
-  const handleFormSubmit = (newPlant) => {
-    console.log("Received new plant data:", newPlant); // Add this line
+function Menu({ gold, water, buyWater, openPopup }) {
+  // Check for gold before opening popup
+  const newPlant = () => {
     if (gold >= 5) {
-      setGold(gold - 5);
-      setFlowers([...flowers, newPlant]);
-      closePopup();
+      openPopup();
+    } else {
+      alert("You do not have enough gold to buy a plant!");
     }
-  };
-
-  const sellPlant = (index) => {
-    const plant = flowers[index];
-    setGold(gold + plant.price);
-    setFlowers(flowers.filter((_, i) => i !== index));
   };
 
   return (
@@ -81,31 +16,8 @@ function Menu() {
         <NumberDisplay name="gold" value={gold} />
         <NumberDisplay name="water" value={water} />
         <MenuButton purchase="buy 10 water" cost="10" onClick={buyWater} />
-        <MenuButton purchase="new plant" cost="5" onClick={openPopup} />
+        <MenuButton purchase="new plant" cost="5" onClick={newPlant} />
       </div>
-      <div className="flex flex-wrap justify-center gap-4">
-        {flowers.map((flower, index) => (
-          <Card
-            key={index}
-            name={flower.name}
-            picture={pictures[flower.picture]}
-            price={flower.price}
-            growth={flower.growth}
-            maxGrowth={flower.maxGrowth}
-            onSell={() => sellPlant(index)}
-          />
-        ))}
-      </div>
-      {isPopupOpen && (
-        <Popup
-          isOpen={isPopupOpen}
-          togglePopup={closePopup}
-          handleFormChange={handleFormChange}
-          handleFormSubmit={handleFormSubmit}
-          formData={newPlantData}
-          pictures={pictures}
-        />
-      )}
     </>
   );
 }
@@ -135,4 +47,5 @@ function MenuButton({ purchase, cost, onClick }) {
     </div>
   );
 }
+
 export default Menu;

@@ -1,0 +1,32 @@
+{
+  "pictures": [
+    "https://c8.alamy.com/comp/S22E9F/a-random-daisy-basking-in-the-spring-sun-S22E9F.jpg",
+    "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg",
+    "https://img.freepik.com/free-photo/purple-osteospermum-daisy-flower_1373-16.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1727308800&semt=ais_hybrid",
+    "https://hips.hearstapps.com/hmg-prod/images/surprising-flower-meanings-balloon-flowers-1650767465.jpg",
+    "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1183074816-649c5cb4c4d8e.jpg?crop=0.447xw:1.00xh;0.318xw,0&resize=980:*"
+  ],
+  "initialFlowers": [
+    {
+      "name": "Eugene",
+      "price": 12,
+      "picture": 0,
+      "growth": 1,
+      "maxGrowth": 6
+    },
+    {
+      "name": "Eugene's son",
+      "price": 12,
+      "picture": 2,
+      "growth": 1,
+      "maxGrowth": 6
+    },
+    {
+      "name": "Eugene's brother",
+      "price": 12,
+      "picture": 3,
+      "growth": 1,
+      "maxGrowth": 6
+    }
+  ]
+}
