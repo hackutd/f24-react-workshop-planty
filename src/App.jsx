@@ -8,7 +8,7 @@ import data from "./data.json";
 function App() {
   const [gold, setGold] = useState(10);
   const [water, setWater] = useState(10);
-  const [flowers, setFlowers] = useState(data.initialFlowers);
+  const [plants, setPlants] = useState(data.initialPlants);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   // Buy water function
@@ -25,7 +25,7 @@ function App() {
   const handleFormSubmit = (newPlant) => {
     if (gold >= 5) {
       setGold(gold - 5);
-      setFlowers([...flowers, newPlant]);
+      setPlants([...plants, newPlant]);
       setIsPopupOpen(false);
     } else {
       alert("You do not have enough gold to buy a plant!");
@@ -36,8 +36,8 @@ function App() {
   const waterPlant = (index) => {
     if (water > 0) {
       setWater(water - 1);
-      setFlowers(
-        flowers.map((p, i) => {
+      setPlants(
+        plants.map((p, i) => {
           if (i !== index) return p;
           else return { ...p, growth: p.growth + 1 };
         })
@@ -49,9 +49,9 @@ function App() {
 
   // Sells a specific plant
   const sellPlant = (index) => {
-    const plant = flowers[index];
+    const plant = plants[index];
     setGold(gold + plant.price);
-    setFlowers(flowers.filter((_, i) => i !== index));
+    setPlants(plants.filter((_, i) => i !== index));
   };
 
   return (
@@ -66,14 +66,14 @@ function App() {
 
       {/* Card grid */}
       <div className="flex flex-wrap justify-center gap-4">
-        {flowers.map((flower, index) => (
+        {plants.map((plant, index) => (
           <Card
             key={index}
-            name={flower.name}
-            picture={data.pictures[flower.picture]}
-            price={flower.price}
-            growth={flower.growth}
-            maxGrowth={flower.maxGrowth}
+            name={plant.name}
+            picture={data.pictures[plant.picture]}
+            price={plant.price}
+            growth={plant.growth}
+            maxGrowth={plant.maxGrowth}
             onWater={() => waterPlant(index)}
             onSell={() => sellPlant(index)}
           />

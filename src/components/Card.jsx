@@ -23,7 +23,7 @@ function Card({ name, picture, price, growth, maxGrowth, onWater, onSell }) {
           <img
             className="w-full h-full flex rounded-full object-cover "
             src={picture}
-            alt="flower"
+            alt="plant"
           />
         </div>
         <button
