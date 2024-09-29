@@ -1,14 +1,13 @@
 import React from "react";
 
-function Card({ name, picture, price, growth, maxGrowth, onWater, onSell }) {
+function Card({ onWater, onSell }) {
   // Decide which function to call based on growth
   const handleClick = () => {
     if (growth === maxGrowth) onSell();
     else onWater();
   };
 
-  const borderCol =
-    growth === maxGrowth ? "border-primary" : "border-transparent";
+  const borderCol = "border-transparent";
 
   return (
     <div
@@ -22,7 +21,7 @@ function Card({ name, picture, price, growth, maxGrowth, onWater, onSell }) {
         <div className="w-16 h-16 mx-auto">
           <img
             className="w-full h-full flex rounded-full object-cover "
-            src={picture}
+            src="https://c8.alamy.com/comp/S22E9F/a-random-daisy-basking-in-the-spring-sun-S22E9F.jpg"
             alt="plant"
           />
         </div>
@@ -30,22 +29,19 @@ function Card({ name, picture, price, growth, maxGrowth, onWater, onSell }) {
           onClick={handleClick}
           className="w-20 mt-2 rounded-md bg-backgroundDarker text-primary font-bold text-lg transition hover:text-text"
         >
-          {growth === maxGrowth ? "SELL" : "water"}
+          water
         </button>
       </div>
 
       {/* Name, price, and growth (right side) */}
       <div className="mt-1 flex flex-col grow">
-        <h1 className="text-3xl text-text font-bold">{name}</h1>
+        <h1 className="text-3xl text-text font-bold">Daisy</h1>
         <h1 className="mb-2 mt-[-0.25rem] text-textLight">
           sell price:
-          <span className="ml-1 text-primary text-lg font-bold">{price}g</span>
+          <span className="ml-1 text-primary text-lg font-bold">10g</span>
         </h1>
         <h1 className="text-text text-5xl font-bold self-center">
-          {growth}
-          <span className="ml-1 text-textLight text-lg">
-            /{maxGrowth} growth
-          </span>
+          0<span className="ml-1 text-textLight text-lg">/6 growth</span>
         </h1>
       </div>
     </div>

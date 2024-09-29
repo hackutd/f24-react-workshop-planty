@@ -8,7 +8,6 @@ import data from "./data.json";
 function App() {
   const [gold, setGold] = useState(10);
   const [water, setWater] = useState(10);
-  const [plants, setPlants] = useState(data.initialPlants);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   // Buy water function
@@ -25,8 +24,8 @@ function App() {
   const handleFormSubmit = (newPlant) => {
     if (gold >= 5) {
       setGold(gold - 5);
-      setPlants([...plants, newPlant]);
       setIsPopupOpen(false);
+      setPlants([...plants, newPlant]);
     } else {
       alert("You do not have enough gold to buy a plant!");
     }
@@ -64,21 +63,8 @@ function App() {
         buyWater={buyWater}
       />
 
-      {/* Card grid */}
-      <div className="flex flex-wrap justify-center gap-4">
-        {plants.map((plant, index) => (
-          <Card
-            key={index}
-            name={plant.name}
-            picture={data.pictures[plant.picture]}
-            price={plant.price}
-            growth={plant.growth}
-            maxGrowth={plant.maxGrowth}
-            onWater={() => waterPlant(index)}
-            onSell={() => sellPlant(index)}
-          />
-        ))}
-      </div>
+      {/* Card grid goes here */}
+      <Card />
 
       <Popup
         isPopupOpen={isPopupOpen}
