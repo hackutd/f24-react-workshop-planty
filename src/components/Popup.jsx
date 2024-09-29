@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import data from "../data.json";
 
-function Popup({ isPopupOpen, closePopup, handleFormSubmit }) {
+function Popup({ isPopupOpen, closePopup, onFormSubmit }) {
   const [name, setName] = useState("");
   const [pictureIndex, setPictureIndex] = useState(0);
 
@@ -22,7 +22,7 @@ function Popup({ isPopupOpen, closePopup, handleFormSubmit }) {
     const randomGrowth = randomInt(5, 15); // Random max growth between 5 and 15
 
     // Callback function call
-    handleFormSubmit({
+    onFormSubmit({
       name,
       price: randomPrice,
       picture: pictureIndex,

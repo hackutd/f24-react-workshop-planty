@@ -22,7 +22,7 @@ function App() {
   };
 
   // Add new plant function
-  const handleFormSubmit = (newPlant) => {
+  const addNewPlant = (newPlant) => {
     if (gold >= 5) {
       setGold(gold - 5);
       setPlants([...plants, newPlant]);
@@ -83,7 +83,7 @@ function App() {
       <Popup
         isPopupOpen={isPopupOpen}
         closePopup={() => setIsPopupOpen(false)}
-        handleFormSubmit={handleFormSubmit}
+        onFormSubmit={addNewPlant}
       />
     </div>
   );
