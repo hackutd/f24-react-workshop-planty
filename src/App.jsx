@@ -32,6 +32,22 @@ function App() {
     }
   };
 
+  // Waters a specific plant
+  const waterPlant = (index) => {
+    if (water > 0) {
+      setWater(water - 1);
+      setFlowers(
+        flowers.map((p, i) => {
+          if (i !== index) return p;
+          else return { ...p, growth: p.growth + 1 };
+        })
+      );
+    } else {
+      alert("You have no more water left!");
+    }
+  };
+
+  // Sells a specific plant
   const sellPlant = (index) => {
     const plant = flowers[index];
     setGold(gold + plant.price);
@@ -58,6 +74,7 @@ function App() {
             price={flower.price}
             growth={flower.growth}
             maxGrowth={flower.maxGrowth}
+            onWater={() => waterPlant(index)}
             onSell={() => sellPlant(index)}
           />
         ))}
