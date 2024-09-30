@@ -21,7 +21,7 @@ function Card({ onWater, onSell }) {
         <div className="w-16 h-16 mx-auto">
           <img
             className="w-full h-full flex rounded-full object-cover "
-            src="https://c8.alamy.com/comp/S22E9F/a-random-daisy-basking-in-the-spring-sun-S22E9F.jpg"
+            src="https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?cs=srgb&dl=pexels-jonaskakaroto-736230.jpg&fm=jpg"
             alt="plant"
           />
         </div>
