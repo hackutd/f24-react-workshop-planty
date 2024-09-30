@@ -63,8 +63,10 @@ function App() {
         buyWater={buyWater}
       />
 
-      {/* Card grid goes here */}
-      <Card />
+      {/* Card grid */}
+      <div className="flex flex-wrap justify-center gap-4">
+        <Card />
+      </div>
 
       <Popup
         isPopupOpen={isPopupOpen}
