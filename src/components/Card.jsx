@@ -7,15 +7,8 @@ function Card({ onWater, onSell }) {
     else onWater();
   };
 
-  const borderCol = "border-transparent";
-
   return (
-    <div
-      className={
-        "w-[24rem] mt-6 mx-2 p-2 bg-backgroundDark rounded-xl font-balsamiq flex justify-center gap-2 border-2 " +
-        borderCol
-      }
-    >
+    <div className="w-[24rem] mt-6 mx-2 p-2 bg-backgroundDark rounded-xl font-balsamiq flex justify-center gap-2 border-2">
       {/* Picture and action button (left side) */}
       <div className="mx-2 flex flex-col justify-center">
         <div className="w-16 h-16 mx-auto">
